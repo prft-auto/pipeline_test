@@ -19,14 +19,14 @@ pipeline {
 
         stage('Check python') {
             steps {
-                sh 'python3 -version'
+                sh 'python -version'
             }
         }
 
         stage('Generate Command') {
             steps {
                 script {
-                    command = 'python3 selenium_test.py --selenium-grid '\
+                    command = 'python selenium_test.py --selenium-grid '\
                      + params.selenium + ' --elastic ' + params.elastic
                 }
             }
